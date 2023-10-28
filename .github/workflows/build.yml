@@ -18,6 +18,10 @@ jobs:
         run: |
           echo "::set-output name=date::$(/bin/date -u "+%Y%m%d")"
         shell: bash
+      - name: Set up Android SDK
+        uses: react-native-community/sdk-manager-action@v1
+        with:
+          components: build-tools;30.0.3
 
       - name: Cache Buildozer global directory
         uses: actions/cache@v2
